@@ -22,8 +22,8 @@ picar.setup()
 REFERENCES = [200, 200, 200, 200, 200]
 #calibrate = True
 calibrate = False
-forward_speed = 20
-backward_speed = 10
+forward_speed = 30
+backward_speed = 30
 turning_angle = 40
 
 max_off_track_count = 40
@@ -41,7 +41,7 @@ fw.turning_max = 45
 
 def straight_run():
 	while True:
-		bw.speed = 20
+		bw.speed = 50
 		bw.forward()
 		fw.turn_straight()
 
