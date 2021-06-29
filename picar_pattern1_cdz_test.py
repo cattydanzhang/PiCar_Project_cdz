@@ -41,9 +41,9 @@ import csv
  
 
 #https://stackoverflow.com/questions/57314552/saving-sensor-data-from-pi-into-csv-file
-def store_data(servo,stepper,lidar):
-    append = [servo,stepper,lidar]
-    with open('lidarscan_output01a.csv', 'a') as csvFile:
+def store_data(stepper,servo,lidar):
+    append = [stepper,servo,lidar]
+    with open('lidarscan_output01b.csv', 'a') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerow(append)
     csvFile.close()
@@ -72,10 +72,10 @@ while a < 145:
         lidarStepper.turnAngle(0.9)
         b=b+0.9
         dist=lidar.measure()
-        print("Lidar: %icm, Stepper: %.2f, Servo: %i" % (dist, b, a))
+#        print("Lidar: %icm, Stepper: %.2f, Servo: %i" % (dist, b, a))
 #        picar_rt.SendPacket("M:%i,%i,%.2f,%i,0,0,0,0,0,0,0,0,0,0,0,0" % (PATTERN_NUMBER, a, b, dist))
 
-        store_data(a,b,dist)
+        store_data(b,a,dist)
 
 #    write_to_csv(dist, b, a)
 

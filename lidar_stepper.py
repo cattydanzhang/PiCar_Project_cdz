@@ -11,7 +11,8 @@ LS_STYLE_MODE_DOUBLE = stepper.DOUBLE
 LS_STYLE_MODE_MICROSTEP = stepper.MICROSTEP
 
 class	LidarStepper:
-    def __init__(self, delay=0.1, steps=400, coil1=board.D20, coil2=board.D16, coil3=board.D12, coil4=board.D26):
+#    def __init__(self, delay=0.1, steps=400, coil1=board.D20, coil2=board.D16, coil3=board.D12, coil4=board.D26):
+    def __init__(self, delay=0.03, steps=400, coil1=board.D20, coil2=board.D16, coil3=board.D12, coil4=board.D26):
         self.coils = (
             digitalio.DigitalInOut(coil1),  # A1
             digitalio.DigitalInOut(coil2),  # A2
