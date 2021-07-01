@@ -43,7 +43,7 @@ import csv
 #https://stackoverflow.com/questions/57314552/saving-sensor-data-from-pi-into-csv-file
 def store_data(stepper,servo,lidar):
     append = [stepper,servo,lidar]
-    with open('lidarscan_output02a.csv', 'a') as csvFile:
+    with open('lidarscan_output02b.csv', 'a') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerow(append)
     csvFile.close()
@@ -55,9 +55,11 @@ lidarStepper = LidarStepper()
 #start_new_thread(send_alive_signal, (picar_rt,))
 #mutex_running.acquire()
 #a = 45
-a = 75
+#a = 75
 #while a < 156:
-while a < 92.9:
+# 75-92.9, 93-110.9, 111-128.9, 129-146.9,147-164.9
+a=93
+while a < 110.9:
     b = 0
     lidarServo.setAngle(a)
     while b < 359.9:
